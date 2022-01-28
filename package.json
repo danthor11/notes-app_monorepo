@@ -1,0 +1,28 @@
+{
+  "name": "notes-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "api-rest",
+    "app"
+  ],
+  "engines": {
+    "npm":"7.9.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build --workspace=app",
+    "start:api": "npm run start --workspace=api-rest",
+    "dev:api": "npm run build && npm run dev --workspace=api-rest"
+  },
+  "eslintConfig": {
+    
+  },
+  "devDependencies": {
+    "standard": "^16.0.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
