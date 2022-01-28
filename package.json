@@ -13,7 +13,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build --workspace=app",
-    "start:api": "npm run start --workspace=api-rest",
+    "start": "npm run start --workspace=api-rest",
     "dev:api": "npm run build && npm run dev --workspace=api-rest"
   },
   "eslintConfig": {
