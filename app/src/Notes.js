@@ -4,7 +4,9 @@ import { CreateNoteForm } from "./components/createNoteForm"
 import { useNote } from "./hooks/notes"
 import { LogOut } from "./components/Logout"
 import { useUser } from "./hooks/users"
-
+import "bootstrap/dist/css/bootstrap.css";
+import { Table } from "react-bootstrap"
+import   Button  from "react-bootstrap/Button"
 
 export const Notes = props => {
     const {notes,addNote} = useNote()
@@ -46,13 +48,16 @@ export const Notes = props => {
         { loading ? "Cargando..." : ""}
 
 
-        <ol>
+        <ol className="table responsive">
           {   
             showAll 
             ? notes.map(note => <Note key={note.id} {...note} />) 
             : notes.filter(filterImportant).map(note => <Note key={note.id} {...note} />) 
           }
         </ol>
+
+        
+
       </div>
     )
   } 

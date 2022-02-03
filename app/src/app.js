@@ -8,6 +8,7 @@ import { Redirect } from 'react-router-dom'
 import { useUser } from './hooks/users'
 import { useNote } from './hooks/notes'
 import { Users } from './components/listOfUser'
+import { Button } from 'react-bootstrap'
 
 const Home = () => <h1>Home</h1>
  
@@ -25,7 +26,9 @@ export const App = () => {
   
   
   return( 
+    <div className='container'>
     <BrowserRouter>
+    <Button >Primary</Button>
       <header>
         <Link to="/"  style={styleInLine}>Home</Link>
         <Link to="/notes"  style={styleInLine}>Notes</Link>
@@ -37,6 +40,7 @@ export const App = () => {
           : (<Link to="/login" style={styleInLine}>Login</Link>  )
         }
       </header>
+    
       <Switch>
         <Route path="/notes/:id" >
           <NoteDetail notes={notes}></NoteDetail>
@@ -54,6 +58,8 @@ export const App = () => {
           <Home/>
         </Route>
       </Switch>
+      
     </BrowserRouter>
+    </div>
   )
 }
