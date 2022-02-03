@@ -1,13 +1,12 @@
 
 import {Togglable} from "./Togglable";
 import { useState } from "react";
-import PropTypes from "prop-types"
 
 export const LoginForm = ({handleLogin}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-
+    
     const handlerUsername = (event) => {
       setUsername(event.target.value)
     }
@@ -17,11 +16,10 @@ export const LoginForm = ({handleLogin}) => {
     }
 
     const handleSubmit = (event) => {
-        event.preventDefault()
-        
+        event.preventDefault() 
         handleLogin(username,password)
-        setUsername("")
-        setPassword("")
+        setUsername("")  
+        setPassword("") 
     }
 
 
@@ -56,6 +54,3 @@ export const LoginForm = ({handleLogin}) => {
     )
 }
 
-LoginForm.propTypes = {
-  handleSubmit : PropTypes.func.isRequired
-}

@@ -8,21 +8,23 @@
     "app"
   ],
   "engines": {
-    "npm":"7.9.0"
+    "npm": "7.9.0"
   },
   "main": "index.js",
   "scripts": {
     "build": "npm run build --workspace=app",
     "start": "npm run start --workspace=api-rest",
+    "dev:app": "npm run start --workspace=app",
     "dev:api": "npm run build && npm run dev --workspace=api-rest"
   },
-  "eslintConfig": {
-    
-  },
+  "eslintConfig": {},
   "devDependencies": {
     "standard": "^16.0.4"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react-router-dom": "^6.2.1"
+  }
 }

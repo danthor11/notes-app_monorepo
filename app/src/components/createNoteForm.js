@@ -19,7 +19,6 @@ export const CreateNoteForm = ({addNote}) => {
         setNewNote(event.target.value)  
     } 
 
-    console.log(elementRef)
 
     return(
         <Togglable  ref={elementRef}>

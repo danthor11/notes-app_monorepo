@@ -107,8 +107,9 @@ notesRouter.post("/", userExtractor, async (request,response,next) => {
     } = request.body
     const {userId}= request
 
-    const user = await User.findOne({userId})
-
+    console.log(userId)
+    const user = await User.findOne({_id:userId})
+    console.log(user)
     if(!content ){
         return response.status(400).json({
             error: "Content missing"
@@ -126,9 +127,8 @@ notesRouter.post("/", userExtractor, async (request,response,next) => {
         
         const savedNote = await newNote.save()
         user.notes = user.notes.concat(savedNote._id)
-        console.log(user)
+        
         res = await user.save({validateModifiedOnly:true})
-        console.log(res)
         response.json(savedNote)
     }
     catch(err){

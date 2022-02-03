@@ -1,7 +1,7 @@
 import React from "react";
 import { useState , forwardRef , useImperativeHandle} from "react";
 import PropTypes from "prop-types"
-import i18n from "./i18n/index";
+import i18n from "../i18n/index";
 
 export const Togglable = forwardRef(({children,message ="muestrame esto"},ref) => {
     const [visible, setVisible] = useState(false);
